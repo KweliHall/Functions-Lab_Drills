@@ -5,6 +5,12 @@
 */
 
 //CODE HERE
+// function helloWorld() {
+//   console.log("Hello, world!")
+// }
+
+// helloWorld();
+
 
 
 ////////////////// PROBLEM 2 ////////////////////
@@ -15,7 +21,11 @@
 */
 
 //CODE HERE
+// function printName(name1) {
+//   console.log(name1);
+// }
 
+// printName("Kweli");
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -29,7 +39,11 @@
 */
 
 //CODE HERE
+// function greeting(name) {
+//   console.log(`hello, ${String(name)}`);  
+// }
 
+// greeting("Kweli");
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -40,8 +54,11 @@
 */
 
 //CODE HERE
+// function add(num1, num2) {
+//   return Number (num1) + Number(num2);
+// };
 
-
+// let sum = add(3,6);
 ////////////////// PROBLEM 5 ////////////////////
 /*
   Write a function called nameCheck that takes in a name parameter.
@@ -52,8 +69,19 @@
 */
 
 //CODE HERE
+// function nameCheck(name) {
+//   if(name === "Steven") {
+//   return "What is up Steven?" 
+//   }else if(name === "Bryan") {
+//    return "Hey Bryan!"
+//   }else {
+//    return `Cool name, ${name}`
+//   }
+// }
 
-
+// let response = nameCheck("Steven")
+// console.log(response)
+// let nameGreeting = nameCheck(called)
 ////////////////// PROBLEM 6 ////////////////////
 /*
   Write a function called faveColorFinder that takes in one parameter called color (which will be a string).
@@ -65,7 +93,21 @@
 */
 
 //CODE HERE
-
+function faveColorFinder(color) {
+  if(color === "red") {
+    return "red is a great color"
+  } else if(color === "green") {
+    return "green is a solid favorite color"
+  } else if(color === "black") {
+    return "so trendy"
+  } else if(color === "purple") {
+    return "your favorite color is most valid"
+  } else {
+    return "you need to evaluate your favorite color choice"
+  }
+}
+let colorRating = faveColorFinder("purple")
+console.log(colorRating)
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -76,7 +118,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(names) {
+  for(let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+  }
+}
 
+printAllNames(namesArr);
 
 ////////////////// PROBLEM 8 ////////////////////
 /*
@@ -87,7 +135,16 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(number) {
+  if(number % 2 === 0) {
+    return "Thats not odd!"
+  } else {
+    return "Thats is odd indeed!"
+  }
+}
 
+let oddChecker = thatsOdd()
+console.log(oddChecker);
 
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -101,7 +158,19 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
-
+function bigOrSmall(arr) {
+  let answers = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] < 100) {
+     answers.push("big")
+    } else if(arr[i] <= 100) {
+      answers.push("small")
+    }
+  }
+  return answers
+}
+let arrayEvaluator = bigOrSmallArray(bigOrSmallArray)
+console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -112,8 +181,16 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
+function theEliminator(contestants, loser) {
+  for(let i = 0; i < contestants.length; i++) {
+    if(contestants[i].includes ("loser")) {
+      contestants.splice(i, 1)
+    }
+  }
+  return contestants;
+ }
 
-
+ console.log(theEliminator(contestants, loser));
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -122,7 +199,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+function argument(cats) {
+  cats = cats.toUpperCase()
+    return cats
+}
+console.log(argument("my name is kweli"));
+console.log(argument(sampleString));
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
@@ -135,6 +217,20 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+// CODE HERE
+function emailCheck(email) {
+  let stringemail = String(email) 
+  let nowhitesapce = stringemail.trim();
+    if(nowhitesapce.includes("@")) {
+      return "email verified"
+    } else {
+      return "must provide a valid email address"
+    }
+  return nowhitesapce;
+} 
+emailCheck("kweli.hall123@gmail.com")
+console.log(emailCheck("kweli.hall123@gmail.com"))
+
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -142,15 +238,20 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
-
+function frogsForGold(gold) {
+  return (math.floor(gold / 3))
+}
+console.log(frogsForGold(8))
 ////////////////// PROBLEM 14 ////////////////////
 /*
   You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in problem 12 (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
-
+function frogsForGold(gold) {
+  return (math.floor(gold / 3))
+}
+console.log(frogsForGold(8))
 
 ////////////////// PROBLEM 15 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -159,7 +260,15 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
-
+function array(arr) {
+  for(let i =0; i < arr.length; i++) {
+    if(arr[i] > arr[i--]) {
+      console.log("array is ascending")
+    } else{
+      return "array is not ascending"
+    }
+  }
+}
 
 ////////////////// PROBLEM 16 ////////////////////
 
